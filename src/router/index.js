@@ -25,6 +25,11 @@ const routes = [
     name: 'menu',
     component: () => import(/* webpackChunkName: "about" */ '../views/ManageMenu.vue')
   },
+  {
+    path: '/manager/menu/add',
+    name: 'menuadd',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ManageMenuAdd.vue')
+  }
 
 ]
 
