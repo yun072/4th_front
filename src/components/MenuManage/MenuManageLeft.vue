@@ -1,6 +1,6 @@
 <template>
   <div class = "container">
-    <div v-for="category in categories" :key="category" @click="selectCategory(category)">
+    <div v-for="category in categories" :key="category" @click="selectCategory(category)" :class="{ 'selected': selectedCategory === category }">
       {{ category }}
     </div>
     <button @click="goToMenuAdd()">+ 메뉴 추가</button>
@@ -15,6 +15,7 @@
   const categories = ref([]);
   // 자식 컴포넌트에서 이벤트 생성 후 호출
   const emit = defineEmits(["categorySelected"]);
+  let selectedCategory = null;
 
   // fetch categories
   const fetchCategories = async () => {
@@ -35,6 +36,7 @@
   // category 는 menuCategory.value(한국어) 임.
   const selectCategory = (category) => {
     emit('categorySelected', category);
+    selectedCategory = category;
     console.log(category);
   };
 
@@ -42,7 +44,31 @@
 </script>
 
 <style scoped>
-  .container{
-    background-color: #D9D9D9;
-  }
+.container {
+  height: 100vh; /* 세로 길이를 화면의 전체 높이로 설정 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #E8E8E8;
+}
+
+.container > div {
+  font-weight: bold; /* 두꺼운 글씨체로 설정 */
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+}
+
+.container > div.selected {
+  background-color: white; /* 클릭된 카테고리의 배경색을 흰색으로 설정 */
+  border-radius: 5px; /* 모서리를 둥글게 만듭니다. */
+}
+
+button {
+  position: fixed; /* 화면 아래에 고정되도록 설정 */
+  bottom: 20px; /* 아래 여백 조정 */
+  right: 20px; /* 오른쪽 여백 조정 */
+  margin-right: auto;
+}
 </style>

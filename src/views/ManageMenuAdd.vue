@@ -8,7 +8,7 @@
 
     <div class="menu-top">
       <div class="img">
-        <img :src="imageSrc" class="img-show" style="max-width: 100px; max-height: 100px;">
+        <img :src="imageSrc" class="img-show" style="max-width: 200px; max-height: 200px;">
         <input type="file" class="img-upload" @change="readInputFile">
       </div>
       <div class="menu">
@@ -137,8 +137,6 @@ const addMenu = async () => {
         }
     );
 
-    console.log('메뉴 추가 완료:', response.data);
-
     console.log('메뉴 추가 완료:');
     router.push({ name: 'menu' });
   } catch (error) {
@@ -149,3 +147,73 @@ const addMenu = async () => {
 
 fetchCategories();
 </script>
+
+<style scoped>
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #D9D9D9;
+  height: 100px;
+}
+
+.left {
+  margin-right: auto; /* 왼쪽 요소를 가장 왼쪽에 배치합니다. */
+  padding : 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+ .img-show {
+   width: 200px;
+   height: 200px;
+   object-fit: contain; /* 이미지 비율 유지하며 요소에 맞춤 */
+ }
+
+.right {
+  margin-left: auto;
+  padding : 20px;
+  border: none;
+  font-weight: bold;
+  background-color: #D9D9D9;
+  font-size: 18px;
+}
+.menu-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.img {
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.img-show,
+.img-upload {
+  margin-bottom: 10px;
+}
+
+.menu {
+  float: right;
+}
+
+.menu-bottom {
+  clear: both;
+  display: flex; /* 추가된 부분 */
+  flex-direction: column; /* 추가된 부분 */
+  align-items: flex-start; /* 추가된 부분 */
+}
+
+/* 상품 설명과 버튼 컨테이너의 스타일 추가 */
+.menu-detail {
+  float: left;
+}
+
+.btn-container {
+  float: right;
+}
+
+</style>
