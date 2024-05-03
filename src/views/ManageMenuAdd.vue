@@ -113,14 +113,8 @@ const readInputFile = (event) => {
 
 const addMenu = async () => {
   try {
-    // formData 잘 들어옴.
-    // formData.append('multipartFile', allFile);
+
     formData.append('menuRequestDto', new Blob([JSON.stringify(menuRequestDto.value)], { type: "application/json" }));
-    // formData.append('storeId', menuRequestDto.value.storeId);
-    // formData.append('name', menuRequestDto.value.name);
-    // formData.append('price', menuRequestDto.value.price);
-    // formData.append('menuCategory', menuRequestDto.value.menuCategory);
-    // console.log("FormData entries:");
 
     // formData에 잘 들어가 있음..
     for (const pair of formData.entries()) {

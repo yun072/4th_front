@@ -25,10 +25,10 @@ const categories = ref([]);
 const selectedCategory = ref('');
 // const menus = ref([]);
 
-// methods 자식의 카테고리.value (한국어)가 들어옴.  -> 자식 -> 부모 성공.
+// methods 자식의 카테고리. category 를 넘김 => 자식 -> 부모 성공.
 const onCategorySelected = (category) => {
-  selectedCategory.value = category.value;
-  console.log(selectedCategory.value);
+  // 한국어임.
+  selectedCategory.value = category;
 };
 
 </script>

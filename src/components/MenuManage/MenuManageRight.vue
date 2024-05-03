@@ -1,7 +1,9 @@
 <template>
   <div class = "container">
     <div v-for="menu in filteredMenus" :key="menu.menuId" class = "menu" :class="{ 'menu-new-row': index % 3 === 0 }">
-      <div class = "menu-img"></div>
+      <div class = "menu-img">
+        <img :src="getMenuImageUrl(menu)" alt="Menu Image">
+      </div>
       <div class =  "menu-name">메뉴명 : {{ menu.name }}</div>
       <div class = "menu-price">가격 : {{ menu.price }}원</div>
     </div>
@@ -14,6 +16,7 @@ import { ref, watch, computed } from 'vue';
 import axios from 'axios';
 
 const props = defineProps({
+  // 한국어임.
   category: String
 });
 
@@ -39,9 +42,20 @@ const filteredMenus = computed(() => {
   }
 
   return menus.value.filter(menu => {
-    return menu.category === props.category;
+    return menu.menuCategory.value == props.category;
   });
 });
+
+// 메뉴 이미지의 URL 생성하는 함수
+const getMenuImageUrl = (menu) => {
+  // 프로필 이미지 파일명
+  const profileImageFileName = menu.menuPictureUrl;
+  // 백엔드에서 프로필 이미지가 저장된 디렉토리 경로
+  const profileImageDirectory = 'C:/Users/Playdata/Desktop/profile/';
+  console.log(`${profileImageDirectory}${profileImageFileName}`);
+  // 프로필 이미지의 URL 생성
+  return `${profileImageDirectory}${profileImageFileName}`;
+};
 
 // Watch
 watch(() => props.category, () => {

@@ -32,8 +32,10 @@
   }
   // select category
   // 이건 부모 컴포넌트에서 이벤트 수신
+  // category 는 menuCategory.value(한국어) 임.
   const selectCategory = (category) => {
     emit('categorySelected', category);
+    console.log(category);
   };
 
   fetchCategories(); // 데이터 가져오기
