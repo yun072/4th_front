@@ -21,6 +21,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/ManagerHome.vue')
   },
   {
+    path: '/manager/ordercheck',
+    name: 'ordercheck',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ManagerOrderHomeView.vue')
+  },
+  {
     path: '/manager/menu',
     name: 'menu',
     component: () => import(/* webpackChunkName: "about" */ '../views/ManageMenu.vue')
@@ -34,7 +39,8 @@ const routes = [
     path: '/order',
     name: 'order',
     component: () => import(/* webpackChunkName: "about" */ '../views/OrderView.vue')
-  }
+  },
+
 
 ]
 

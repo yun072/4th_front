@@ -46,7 +46,7 @@
         <!-- 메뉴 관리 버튼 -->
         <button @click="goToMenuPage" class="menu-btn">메뉴관리</button>
         <!-- 주문 관리 버튼 -->
-        <router-link to="/orders" class="orders-btn">주문관리</router-link>
+        <button @click="goToOrderNow" class="orders-btn">주문관리</button>
       </div>
 
     </div>
@@ -62,7 +62,7 @@ export default {
   methods: {
     goToOrderNow() {
       // ORDER NOW 버튼 클릭 시 처리할 내용
-      console.log('Navigate to order page');
+      this.$router.push({ name: "ordercheck" });
     },
     goToMenuPage() {
       this.$router.push({ name: "menu" });
