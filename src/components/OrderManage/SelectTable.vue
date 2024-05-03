@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="table-list">
-      <div
-          class="table"
-          v-for="table in tables"
-          :key="table.id"
-          @click="selectTable(table.orderId)"
+      <div 
+        class="table" 
+        v-for="table in tables" 
+        :key="table.id" 
+        @click="selectTable(table.orderId)"
       >
         <img :src="table.image" alt="Table {{ table.id }}" />
         <p>Table {{ table.id }}</p>

@@ -127,7 +127,7 @@ const addMenu = async () => {
       }
     }
 
-    const response = await axios.post(
+    await axios.post(
         'http://localhost:8080/api/menus',
         formData,
         {
