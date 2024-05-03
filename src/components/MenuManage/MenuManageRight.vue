@@ -87,7 +87,7 @@ fetchMenus();
 
 .menu-img {
   width: 80px;
-  height: 80px;
+  height: 70px;
   background-color: #ddd; /* 이미지 박스의 색상 */
   border-radius: 5px; /* 모서리를 둥글게 */
   margin: 0 auto 10px; /* 이미지를 가로 중앙으로 정렬하고, 아래에 공백 추가 */
@@ -97,5 +97,12 @@ fetchMenus();
 .menu-name,
 .menu-price {
   text-align: center;
+}
+
+.menu-img img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: 100%;
 }
 </style>
