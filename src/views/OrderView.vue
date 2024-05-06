@@ -6,13 +6,8 @@
     <div class="menu-order-left">
       <MenuOrderCategory :categories="categories" @categorySelected="onCategorySelected" />
     </div>
-    <div class="menu-order-mid">
-      <MenuList :category="selectedCategory"/>
-      <!--      :selectedCategory="selectedCategory"-->
-    </div>
     <div class="menu-order-right">
-      <MenuOrderList :category="selectedCategory"/>
-      <!--      :selectedCategory="selectedCategory"-->
+      <MenuList :category="selectedCategory"/>
     </div>
   </div>
 </template>
@@ -20,7 +15,6 @@
 <script setup>
 import { ref} from 'vue';
 import MenuOrderCategory from "@/components/MenuOrder/MenuOrderCategory.vue";
-import MenuOrderList from "@/components/MenuOrder/MenuOrderList.vue";
 import MenuList from "@/components/MenuOrder/MenuList.vue";
 // import axios from 'axios';
 
@@ -36,6 +30,7 @@ const onCategorySelected = (category) => {
 };
 
 </script>
+
 <style scoped>
 .menu-order {
   display: flex;
@@ -44,11 +39,7 @@ const onCategorySelected = (category) => {
 .menu-order-left {
   flex: 2; /* 왼쪽 영역을 2의 비율로 설정 */
 }
-
-.menu-order-mid {
-  flex: 6; /* 오른쪽 영역을 8의 비율로 설정 */
-}
 .menu-order-right {
-  flex: 2; /* 오른쪽 영역을 8의 비율로 설정 */
+  flex: 8; /* 오른쪽 영역을 8의 비율로 설정 */
 }
 </style>

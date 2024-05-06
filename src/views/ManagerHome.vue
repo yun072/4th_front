@@ -136,7 +136,7 @@ export default {
   color: rgb(0, 0, 0);
   text-decoration: none;
   border-radius: 50px; /* 원형 버튼을 만들기 위해 반지름을 50%로 설정 */
-  border: 3px solid orange; /* 원형 테두리를 주황색으로 설정 */
+  border: 3px solid rgb(255, 166, 0); /* 원형 테두리를 주황색으로 설정 */
 }
 
 /* 매장 관리자 메뉴 스타일 */
