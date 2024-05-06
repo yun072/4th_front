@@ -3,14 +3,14 @@
     <!-- 네비게이션 바 -->
     <nav class="navbar">
       <div class="navbar-left">
-        <div class="logo">3TEAM</div>
+        <div class="logo">OUR %POS</div>
         <div class="menu">MENU</div>
         <div class="store">STORE</div>
         <div class="user">USER</div>
         <div class="admin">ADMIN</div>
       </div>
       <div class="navbar-right">
-        <div class="order-now" @click="goToOrderNow">ORDER NOW</div>
+        <div class="order-now" @click="goToHome">GO BACK</div>
       </div>
     </nav>
 
@@ -59,7 +59,11 @@
 // const router = useRouter();
 
 export default {
+
   methods: {
+    goToHome() {
+      this.$router.push({ name: "home" });
+    },
     goToOrderNow() {
       // ORDER NOW 버튼 클릭 시 처리할 내용
       this.$router.push({ name: "ordercheck" });

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" style="overflow-y: auto;">
     <div v-for="menu in filteredMenus" :key="menu.menuId" class="menu" :class="{ 'menu-new-row': index % 3 === 0 }">
       <div class="menu-img" @click="addToCart(menu)">
         <img :src="getMenuImageUrl(menu)" alt="Menu Image">
@@ -183,7 +183,7 @@ watch(() => props.category, () => {
 .cart-table button {
   margin-top: 10px;
   padding: 8px 16px;
-  background-color: #4CAF50;
+  background-color: orange;
   color: white;
   border: none;
   border-radius: 4px;
@@ -191,6 +191,6 @@ watch(() => props.category, () => {
 }
 
 .cart-table button:hover {
-  background-color: #45a049;
+  background-color: rgba(255, 68, 0, 0.895);
 }
 </style>

@@ -26,7 +26,9 @@ export default {
         { id: 1, image: 'https://cdn-icons-png.flaticon.com/512/7113/7113274.png', orderId: 1 },
         { id: 2, image: 'https://cdn-icons-png.flaticon.com/512/7113/7113274.png', orderId: 2 },
         { id: 3, image: 'https://cdn-icons-png.flaticon.com/512/7113/7113274.png', orderId: 3 },
-        { id: 4, image: 'https://cdn-icons-png.flaticon.com/512/7113/7113274.png', orderId: 4 }
+        { id: 4, image: 'https://cdn-icons-png.flaticon.com/512/7113/7113274.png', orderId: 4 },
+        { id: 5, image: 'https://cdn-icons-png.flaticon.com/512/7113/7113274.png', orderId: 5 }
+       
       ],
       selectedOrderId: null
     };

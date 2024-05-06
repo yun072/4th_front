@@ -11,19 +11,16 @@
           <div class="admin">ADMIN</div>
         </div>
         <div class="navbar-right">
-          <div class="order-now" @click="goToOrderNow">ORDER NOW</div>
+          <button class="order-now" @click="goBack">GO BACK</button>
         </div>
       </nav>
 
       <Table />
     </div>
-    <div class="order-tab">
-      <div class="order-component">
-
-      </div>
-
-    </div>
+   
+    
   </div>
+  
 </template>
 
 <script>
@@ -32,6 +29,11 @@ import Table from '@/components/OrderManage/SelectTable.vue';
 
 
 export default {
+  methods: {
+    goBack() {
+      this.$router.push({ name: "manager" });
+    }
+  },
   components: {
 
     Table,
@@ -54,6 +56,8 @@ export default {
   flex: 1; /* 오른쪽에 Order 컴포넌트가 꽉 차도록 설정 */
   padding: 20px; /* 여백 설정 */
   background-color: rgba(255, 255, 255, 0.542);
+  
+  
 }
 /* 네비게이션 바 스타일 */
 .navbar {
@@ -62,6 +66,7 @@ export default {
   align-items: center;
   background-color: white;
   padding: 10px 20px;
+  width: 100%; 
 }
 
 .navbar-left {
