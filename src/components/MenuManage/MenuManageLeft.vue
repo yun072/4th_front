@@ -1,6 +1,6 @@
 <template>
   <div class = "container">
-    <div v-for="category in categories" :key="category" @click="selectCategory(category)" :class="{ 'selected': selectedCategory === category }">
+    <div class = "category" v-for="category in categories" :key="category" @click="selectCategory(category)" :class="{ 'selected': selectedCategory === category }">
       {{ category }}
     </div>
     <button @click="goToMenuAdd()">+ 메뉴 추가</button>
@@ -50,7 +50,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #E8E8E8;
 }
 
 .container > div {
@@ -70,5 +69,29 @@ button {
   bottom: 20px; /* 아래 여백 조정 */
   right: 20px; /* 오른쪽 여백 조정 */
   margin-right: auto;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: rgb(255, 255, 255); /* 주황색 배경색 */
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 50px; /* 원형 버튼을 만들기 위해 반지름을 50%로 설정 */
+  border: 1px solid orange; /* 원형 테두리를 주황색으로 설정 */
+}
+.category{
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: rgb(255, 255, 255); /* 주황색 배경색 */
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 50px; /* 원형 버튼을 만들기 위해 반지름을 50%로 설정 */
+  border: 3px solid orange; /* 원형 테두리를 주황색으로 설정 */
+  width: 150px; /* 가로 넓이를 200px로 고정 */
+}
+.category.selected {
+  border-color: red; /* 선택된 카테고리에 대한 테두리 색상을 변경 */
 }
 </style>

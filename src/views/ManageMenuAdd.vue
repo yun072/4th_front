@@ -1,7 +1,17 @@
 <template>
   <Header>
-    <div class="left">메뉴 추가</div>
-    <button class="right" @click="goBack">Go Back</button>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <div class="logo">OUR %POS</div>
+        <div class="menu">MENU</div>
+        <div class="manage">MANAGE</div>
+        <div class="add">ADD</div>
+        <div class="admin">ADMIN</div>
+      </div>
+      <div class="navbar-right">
+        <div class="go_back" @click="goBack">Go Back</div>
+      </div>
+    </nav>
   </Header>
 
   <form @submit.prevent="addMenu" class="body">
@@ -34,12 +44,6 @@
     </div>
 
     <div class="menu-bottom">
-<!--      <div class="menu-detail">-->
-<!--        상품 설명-->
-<!--        <br>-->
-<!--        <input v-model="menuDetail" class="menu-detail-input" placeholder="상품 설명">-->
-<!--      </div>-->
-
       <div class="btn-container">
         <button class="btn_add" type="submit">추가</button>
         <button class="btn_exit" @click="goBack">취소</button>
@@ -66,7 +70,6 @@ const menuRequestDto = ref({
   price: 0,
   menuCategory: ''
 });
-// const menuDetail = ref('');
 
 const goBack = () => {
   router.push({ name: "menu" });
@@ -75,7 +78,15 @@ const goBack = () => {
 const fetchCategories = async () => {
   try {
     const response = await axios.get('http://localhost:8080/api/menus/store/1');
-    categories.value = [...new Set(response.data.data.map(menu => menu.menuCategory))];
+    // categories.value = [...new Set(response.data.data.map(menu => menu.menuCategory))];
+    categories.value = response.data.data.map(menu => menu.menuCategory);
+    categories.value = categories.value.filter((category, index, self) => {
+      const key = category.key;
+      const isDuplicate = self.findIndex(c => c.key === key) !== index;
+      return !isDuplicate;
+    });
+
+
   } catch (error) {
     console.error('Error fetching categories:', error);
   }
@@ -151,34 +162,21 @@ fetchCategories();
 <style scoped>
 /* Header */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #D9D9D9;
-  height: 100px;
+  flex: 3; /* 주문 관리 컴포넌트가 왼쪽에 넓게 설정 */
+  padding: 20px; /* 여백 설정 */
 }
-
-.left {
-  margin-right: auto; /* 왼쪽 요소를 가장 왼쪽에 배치합니다. */
-  padding : 20px;
-  font-weight: bold;
-  font-size: 18px;
-}
-
  .img-show {
    width: 200px;
    height: 200px;
    object-fit: contain; /* 이미지 비율 유지하며 요소에 맞춤 */
  }
-
-.right {
-  margin-left: auto;
+.body{
+  margin:300px;
+  margin-top: 30px;
   padding : 20px;
-  border: none;
-  font-weight: bold;
-  background-color: #D9D9D9;
-  font-size: 18px;
+  border : #ccc solid 1px;
 }
+
 .menu-top {
   display: flex;
   flex-direction: row;
@@ -198,6 +196,11 @@ header {
 
 .menu {
   float: right;
+  padding : 5px;
+}
+
+.menu-category , .menu-name, .menu-price{
+  padding : 3px;
 }
 
 .menu-bottom {
@@ -205,6 +208,7 @@ header {
   display: flex; /* 추가된 부분 */
   flex-direction: column; /* 추가된 부분 */
   align-items: flex-start; /* 추가된 부분 */
+  padding : 5px;
 }
 
 /* 상품 설명과 버튼 컨테이너의 스타일 추가 */
@@ -214,6 +218,48 @@ header {
 
 .btn-container {
   float: right;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 20px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+}
+
+.logo, .menu, .manage, .admin, .add, .go_back {
+  margin-right: 20px;
+}
+
+.go_back{
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: rgb(255, 255, 255); /* 주황색 배경색 */
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 50px; /* 원형 버튼을 만들기 위해 반지름을 50%로 설정 */
+  border: 3px solid orange; /* 원형 테두리를 주황색으로 설정 */
+}
+.menu-bottom {
+  position: relative; /* 상위 요소에 대해 위치 지정 */
+}
+
+.btn-container {
+  position: absolute; /* 상위 요소에 대해 위치 지정 */
+  bottom: 0; /* 맨 아래에 위치 */
+  right: 0; /* 맨 오른쪽에 위치 */
 }
 
 </style>
