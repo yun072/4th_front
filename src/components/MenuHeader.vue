@@ -10,34 +10,56 @@
 
 <template>
   <Header>
-    <div class = "left">메뉴 관리</div>
-    <button class = "right" @click="goBack">Go Back</button>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <div class="logo">OUR %POS</div>
+        <div class="menu">MENU</div>
+        <div class="manage">MANAGE</div>
+        <div class="admin">ADMIN</div>
+      </div>
+      <div class="navbar-right">
+        <div class="order-now" @click="goBack">Go Back</div>
+      </div>
+    </nav>
   </Header>
 
 </template>
 
 <style scoped>
   header {
-    display: flex; /* 헤더를 플렉스 컨테이너로 설정하여 자식 요소를 배치합니다. */
-    justify-content: space-between; /* 자식 요소 사이의 간격을 최대로 설정하여 왼쪽과 오른쪽에 요소를 배치합니다. */
-    align-items: center; /* 수직 가운데 정렬을 설정합니다. */
-    background-color: #D9D9D9;
-    height : 70px;
+  flex: 3; /* 주문 관리 컴포넌트가 왼쪽에 넓게 설정 */
+  padding: 20px; /* 여백 설정 */
   }
 
-  .left {
-    margin-right: auto; /* 왼쪽 요소를 가장 왼쪽에 배치합니다. */
-    padding : 20px;
-    font-weight: bold;
-    font-size: 18px;
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
   }
 
-  .right {
-    margin-left: auto;
-    padding : 20px;
-    border: none;
-    font-weight: bold;
-    background-color: #D9D9D9;
-    font-size: 18px;
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-right {
+    display: flex;
+  }
+
+  .logo, .menu, .manage, .admin, .order-now {
+    margin-right: 20px;
+  }
+  .order-now {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: rgb(255, 255, 255); /* 주황색 배경색 */
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 50px; /* 원형 버튼을 만들기 위해 반지름을 50%로 설정 */
+    border: 3px solid orange; /* 원형 테두리를 주황색으로 설정 */
   }
 </style>
