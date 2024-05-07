@@ -18,7 +18,7 @@ let selectedCategory = null;
 // fetch categories
 const fetchCategories = async () => {
   try {
-    const response = await axios.get('http://localhost:8080/api/menus/store/1');
+    const response = await axios.get('http://43.201.111.166:8080/api/menus/store/1');
     categories.value = [...new Set(response.data.data.map(menu => menu.menuCategory.value))];
     console.log(categories);
   } catch (error) {
