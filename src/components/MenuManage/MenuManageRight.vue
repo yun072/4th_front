@@ -28,7 +28,7 @@ const menus = ref([]);
 // Methods
 const fetchMenus = async () => {
   try {
-    const response = await axios.get('http://localhost:8080/api/menus/store/1');
+    const response = await axios.get('http://43.201.111.166:8080/api/menus/store/1');
     menus.value = response.data.data;
   } catch (error) {
     console.error('Error fetching menus:', error);
@@ -51,7 +51,7 @@ const getMenuImageUrl = (menu) => {
   // 프로필 이미지 파일명
   const profileImageFileName = menu.menuPictureUrl;
   // 백엔드에서 프로필 이미지가 저장된 디렉토리 경로
-  const profileImageDirectory = 'http://localhost:8080/images/';
+  const profileImageDirectory = 'http://43.200.5.207:8080/images/';
   console.log(`${profileImageDirectory}${profileImageFileName}`);
   // 프로필 이미지의 URL 생성
   return `${profileImageDirectory}${profileImageFileName}`;
