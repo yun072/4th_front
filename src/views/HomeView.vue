@@ -19,7 +19,7 @@
       <img src="https://www.foodandwine.com/thmb/u491s8vce12ss_XI-Wm6mc02F5k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Shake-Shack-Launching-a-Spicy-New-Hot-Menu-Nationwide-FT-2-BLOG0923-ba15a62d69624e4585ae958e6d52358d.jpg" alt="쉐이크 랜딩 페이지 이미지">
 
       <div class="landing-text">ORDER NOW!</div>
-      <div class="landing-text2">ssss helps tens of thousands of companies expand globally with unmatched speed,</div>
+      <div class="landing-text2">"OUR POS" helps tens of thousands of companies expand globally with unmatched speed,</div>
       <div class="landing-text2">flexibility and compliance. Get our all-in-one Global People Platform that simplifies </div>
       <div class="landing-text2">the way you onboard, offboard, and everything else in between.</div>
       <div class="landing-buttons">

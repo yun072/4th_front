@@ -35,7 +35,17 @@
           </tr>
           <tr>
             <th>이용가능 서비스</th>
-            <td>맥모닝, 디저트, 맥날콤보 등</td>
+            <td>
+              <!-- 이미지 표시를 위한 빈 요소 -->
+              <div class="service-images">
+                <img src="https://www.mcdonalds.co.kr/upload/main/store_service/1580887217994.png" alt="Service 1">
+                <img src="https://www.mcdonalds.co.kr/upload/main/store_service/1580887371824.png" alt="Service 2">
+                <img src="https://www.mcdonalds.co.kr/upload/main/store_service/1580887410227.png" alt="Service 3">
+                <img src="https://www.mcdonalds.co.kr/upload/main/store_service/1580887307761.png" alt="Service 4">
+                <img src="https://www.mcdonalds.co.kr/upload/main/store_service/1580887501964.png" alt="Service 5">
+                <!-- 필요한 만큼 이미지를 추가 -->
+              </div>
+            </td>
           </tr>
 
         </table>
@@ -115,7 +125,7 @@ export default {
   margin-bottom: 30px;
 }
 .store-table {
-  width: 80%; /* 테이블의 너비를 조절 */
+  width: 65%; /* 테이블의 너비를 조절 */
   margin: 0 auto; /* 가운데 정렬을 위해 margin 설정 */
   border-collapse: collapse;
   margin-top: 20px;
