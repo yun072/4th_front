@@ -9,7 +9,7 @@
     </div>
 
     <!-- 장바구니 테이블 -->
-    <div v-if="showCart" class="cart-table">
+    <div  v-if="showCart" class="cart-table">
       <h2>장바구니</h2>
       <table>
         <thead>
@@ -29,6 +29,7 @@
           </tr>
         </tbody>
       </table>
+      <div class="total">총 결제금액: {{ totalAmount }}원</div>
       <button @click="placeOrder">주문하기</button>
     </div>
   </div>
@@ -105,6 +106,13 @@ const filteredMenus = computed(() => {
   });
 });
 
+// 장바구니 합계금액 계산하는 계산된 속성
+const totalAmount = computed(() => {
+  return cartItems.value.reduce((total, item) => {
+    return total + (item.price * item.quantity);
+  }, 0);
+});
+
 // 메뉴 이미지의 URL 생성하는 함수
 const getMenuImageUrl = (menu) => {
   const profileImageFileName = menu.menuPictureUrl;
@@ -123,6 +131,8 @@ watch(() => props.category, () => {
 .container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start; /* 메뉴 리스트를 왼쪽에 정렬 */
+  align-items: flex-start; /* 메뉴 리스트를 위쪽으로 정렬 */
 }
 
 .menu {
@@ -162,6 +172,8 @@ watch(() => props.category, () => {
 
 .cart-table {
   margin-top: 20px;
+  flex: 0 0 100%; /* 컨테이너의 너비를 100%로 설정하여 한 줄에 표시 */
+  
 }
 
 .cart-table table {
@@ -192,5 +204,11 @@ watch(() => props.category, () => {
 
 .cart-table button:hover {
   background-color: rgba(255, 68, 0, 0.895);
+}
+.total{
+  margin-top: 10px;
+  text-align: right;
+  font-size: 20px; /* 글자 크기 조정 */
+  font-weight: bold; /* 굵은 글자 설정 */
 }
 </style>
