@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: lightgray; padding: 50px 0; margin: 0 500px;">
+  <div style="background-color: lightgray; padding: 50px 0; margin: 0 300px;">
     <h2>주문 처리 현황</h2>
     <table class="order-table">
       <thead>
