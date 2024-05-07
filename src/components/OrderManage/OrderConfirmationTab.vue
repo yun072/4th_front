@@ -89,7 +89,7 @@ export default {
   methods: {
     async fetchOrderDetails() {
       try {
-        const response = await axios.get(`http://43.200.5.207:8080/api/orders/${this.orderId}`);
+        const response = await axios.get(`http://43.201.111.166:8080/api/orders/${this.orderId}`);
         const data = response.data;
         // 주문 상세 정보를 받아와서 컴포넌트의 데이터에 저장
         this.orderDetails = data;

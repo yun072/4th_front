@@ -77,7 +77,7 @@ const goBack = () => {
 
 const fetchCategories = async () => {
   try {
-    const response = await axios.get('http://43.200.5.207:8080/api/menus/store/1');
+    const response = await axios.get('http://43.201.111.166:8080/api/menus/store/1');
     // categories.value = [...new Set(response.data.data.map(menu => menu.menuCategory))];
     categories.value = response.data.data.map(menu => menu.menuCategory);
     categories.value = categories.value.filter((category, index, self) => {
@@ -139,7 +139,7 @@ const addMenu = async () => {
     }
 
     await axios.post(
-        'http://43.200.5.207:8080/api/menus',
+        'http://43.201.111.166:8080/api/menus',
         formData,
         {
           headers: {
