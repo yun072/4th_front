@@ -167,11 +167,11 @@ header {
   flex: 3; /* 주문 관리 컴포넌트가 왼쪽에 넓게 설정 */
   padding: 20px; /* 여백 설정 */
 }
- .img-show {
-   width: 200px;
-   height: 200px;
-   object-fit: contain; /* 이미지 비율 유지하며 요소에 맞춤 */
- }
+.img-show {
+  width: 200px;
+  height: 200px;
+  object-fit: contain; /* 이미지 비율 유지하며 요소에 맞춤 */
+}
 .body{
   margin:300px;
   margin-top: 30px;
