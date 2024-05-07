@@ -15,8 +15,6 @@
 <script setup>
 import { ref} from 'vue';
 import MenuHeader from "@/components/MenuHeader.vue";
-import MenuManageLeft from "@/components/MenuManage/MenuManageLeft.vue";
-import MenuManageRight from "@/components/MenuManage/MenuManageRight.vue";
 import MenuOrderCategory from "@/components/MenuOrder/MenuOrderCategory.vue";
 import MenuList from "@/components/MenuOrder/MenuList.vue";
 // import axios from 'axios';
