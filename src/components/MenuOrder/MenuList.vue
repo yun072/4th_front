@@ -53,7 +53,7 @@ const cartItems = ref([]);
 // Methods
 const fetchMenus = async () => {
   try {
-    const response = await axios.get('http://43.200.5.207:8080/api/menus/store/1');
+    const response = await axios.get('http://43.201.111.166:8080/api/menus/store/1');
     menus.value = response.data.data;
   } catch (error) {
     console.error('Error fetching menus:', error);
@@ -85,7 +85,7 @@ const placeOrder = async () => {
         quantity: item.quantity
       }))
     };
-    const response = await axios.post('http://43.200.5.207:8080/api/orders', orderData);
+    const response = await axios.post('http://43.201.111.166:8080/api/orders', orderData);
     
     console.log('Order placed:', response.data);
     // 주문이 성공적으로 완료되면 장바구니 비우기 등의 작업 수행
@@ -116,7 +116,7 @@ const totalAmount = computed(() => {
 // 메뉴 이미지의 URL 생성하는 함수
 const getMenuImageUrl = (menu) => {
   const profileImageFileName = menu.menuPictureUrl;
-  const profileImageDirectory = 'http://43.200.5.207:8080/images/';
+  const profileImageDirectory = 'http://43.201.111.166:8080/images/';
   return `${profileImageDirectory}${profileImageFileName}`;
 };
 
