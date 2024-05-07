@@ -27,7 +27,9 @@
           <br>
           <select v-model="menuCategory" @change="categoryChanged">
             <option value="">카테고리 선택</option>
-            <option v-for="category in categories" :key="category" :value="category">{{ category.value }}</option>
+            <option value="HAMBURGER">햄버거</option>
+            <option value="DESSERT">디저트</option>
+            <option value="DRINK">음료</option>
           </select>
         </div>
         <div class="menu-name">
@@ -93,8 +95,8 @@ const fetchCategories = async () => {
 };
 
 const categoryChanged = () => {
-  console.log('menuCategory:', menuCategory.value.key);
-  menuRequestDto.value.menuCategory = menuCategory.value.key;
+  console.log('menuCategory:', menuCategory.value);
+  menuRequestDto.value.menuCategory = menuCategory.value;
 };
 
 const readInputFile = (event) => {
