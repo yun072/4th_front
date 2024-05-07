@@ -28,7 +28,7 @@ const menus = ref([]);
 // Methods
 const fetchMenus = async () => {
   try {
-    const response = await axios.get('http://localhost:8080/api/menus/store/1');
+    const response = await axios.get('http://43.201.111.166:8080/api/menus/store/1');
     menus.value = response.data.data;
   } catch (error) {
     console.error('Error fetching menus:', error);
