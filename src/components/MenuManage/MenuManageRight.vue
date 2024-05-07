@@ -51,7 +51,7 @@ const getMenuImageUrl = (menu) => {
   // 프로필 이미지 파일명
   const profileImageFileName = menu.menuPictureUrl;
   // 백엔드에서 프로필 이미지가 저장된 디렉토리 경로
-  const profileImageDirectory = 'http://localhost:8080/images/';
+  const profileImageDirectory = 'http://43.200.5.207:8080/images/';
   console.log(`${profileImageDirectory}${profileImageFileName}`);
   // 프로필 이미지의 URL 생성
   return `${profileImageDirectory}${profileImageFileName}`;
