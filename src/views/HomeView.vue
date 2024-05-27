@@ -24,28 +24,29 @@
       <div class="landing-text2">the way you onboard, offboard, and everything else in between.</div>
       <div class="landing-buttons">
         <button @click="goToManager" class="manager-btn">MANAGER</button>
-
         <button @click="goToOrderNow" class="order-btn">ORDER</button>
+        <button @click="goToBash" class = "bash">BASH</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import { useRouter } from 'vue-router'
-
-// const router = useRouter();
 
 export default {
-  methods: {
-    goToOrderNow() {
-      this.$router.push({ name: "order" });
-    },
+  methods:{
     goToManager() {
       this.$router.push({ name: "manager" });
+    },
+    goToOrderNow() {
+      // ORDER NOW 버튼 클릭 시 처리할 내용
+      this.$router.push({ name: "ordercheck" });
+    },
+    goToBash(){
+      this.$router.push({name:"bash"});
     }
   }
-}
+};
 </script>
 
 <style scoped>

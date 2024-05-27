@@ -40,6 +40,11 @@ const routes = [
     name: 'order',
     component: () => import(/* webpackChunkName: "about" */ '../views/OrderView.vue')
   },
+  {
+    path: '/bash',
+    name: 'bash',
+    component: ()=>import('../views/BashView.vue')
+  }
 
 
 ]
