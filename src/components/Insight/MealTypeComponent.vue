@@ -1,9 +1,8 @@
 <template>
-    <h2>
-        식사유형별 매출액 비중 인사이트
-    </h2>
-
-    <button @click="fetchData">새로고침</button>
+    <h3>
+        식사유형별 매출액
+    </h3>
+    
     <div class = "canvas-container">
       <div class = "canvas">
       <canvas id="mealTypeChart"></canvas>

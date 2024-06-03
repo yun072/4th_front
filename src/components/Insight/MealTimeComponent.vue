@@ -1,7 +1,7 @@
 <template>
-    <h2>
-        시간대별 매출액 추이
-    </h2>
+    <h3>
+        시간대별 매출액
+    </h3>
     <div class = "canvas-container">
       <div class = "canvas">
       <canvas id="mealTimeChart"></canvas>

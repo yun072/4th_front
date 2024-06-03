@@ -9,16 +9,19 @@
   },
   "dependencies": {
     "@azure/msal-node": "^2.8.1",
+    "@vue-leaflet/vue-leaflet": "^0.10.1",
     "axios": "^1.6.8",
     "chart.js": "^4.4.3",
     "core-js": "^3.8.3",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "json-server": "^1.0.0-alpha.23",
+    "leaflet": "^1.9.4",
     "powerbi-client": "^2.23.1",
     "redis": "^4.6.13",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.3"
+    "vue-router": "^4.0.3",
+    "vue3-leaflet": "^1.0.48"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

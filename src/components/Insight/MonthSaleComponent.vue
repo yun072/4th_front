@@ -1,6 +1,5 @@
 <template>
-      <h2>지점 월별 매출량 인사이트입니다.</h2>
-      <button @click="fetchData">새로고침</button>
+      <h3>월별 매출량</h3>
 
       <div class = "canvas-container">
         <div class = "canvas">
@@ -105,8 +104,8 @@
     justify-content: center;
     align-items: center;
 }
-  .canvas{
-    height : 400px;
-    width: 400px;
-  }
+
+.canvas {
+    height: 300px;
+}
   </style>
